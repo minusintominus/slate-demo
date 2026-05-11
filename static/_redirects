@@ -1,3 +1,3 @@
-# SPA fallback — same pattern works on Cloudflare Pages and Netlify.
-# Without this (or `serve -s` / `vite preview`), plain static servers 404 on deep links.
-/*    /index.html   200
+# Portal React SPA — deep routes (e.g. /portal/dashboard) have no files; serve shell HTML.
+# Existing files under /portal/*.css, /portal/vendor/*, etc. still win over this rule on Cloudflare Pages.
+/portal/*  /portal/index.html  200
