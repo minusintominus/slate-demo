@@ -1,0 +1,3 @@
+# SPA fallback — same pattern works on Cloudflare Pages and Netlify.
+# Without this (or `serve -s` / `vite preview`), plain static servers 404 on deep links.
+/*    /index.html   200

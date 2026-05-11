@@ -1,0 +1,13 @@
+{
+  "name": "demo-esli",
+  "version": "1.0.0",
+  "description": "Slate is a prototype workspace for a **Relationship Manager (RM)** at a wealth advisory firm. An RM is the person at the bank or advisory shop who handles wealthy families end-to-end: knows their goals, signs them up for the right investments, monitors what they own, prepares for every meeting, and writes the proposals that get put in front of them.",
+  "main": "analytics.js",
+  "scripts": {
+    "start": "npx --yes serve -s . -l 5173",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Slate Private Wealth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Slate Private Wealth — workspace experience"/>
+  <link rel="icon" type="image/png" sizes="150x150" href="../brand/favicon.png?v=4" id="slate-favicon"/>
+  <link rel="shortcut icon" type="image/png" href="../brand/favicon.png?v=4" id="slate-favicon-shortcut"/>
+  <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png?v=4"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-theme="light">
+  <div id="root"><p style="padding:24px;font-family:system-ui,sans-serif;color:#444">Loading Slate…</p></div>
+
+  <!-- Vendored so the app works offline and when a CDN is blocked (blank #root if Babel never runs). -->
+  <script src="vendor/react.development.js"></script>
+  <script src="vendor/react-dom.development.js"></script>
+  <script src="vendor/babel.min.js"></script>
+
+  <script src="lib.js"></script>
+  <script src="data.js"></script>
+  <script src="copy.js"></script>
+  <script src="analytics.js"></script>
+  <script src="client-store.js"></script>
+  <!-- Served from SvelteKit static: choosing Wealth manager hands off to the Kit WM shell. -->
+  <script>window.__SLATE_WM_HANDOFF_TO_KIT__ = true;</script>
+  <!-- Optional: SvelteKit app root if not same-origin `/` (e.g. `window.__SLATE_KIT_HOME__ = '/my-base/';`). -->
+  <!-- JSX modules load in deterministic order via boot.js (Babel’s async src= race would otherwise blank the app). -->
+  <script src="boot.js"></script>
+</body>
+</html>
