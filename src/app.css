@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink-2);
+  --color-ink3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
+  --color-warn: var(--warn);
+}
+
+/* Slate — production tokens, light + dark */
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --surface-2: #f5f4ef;
+  --ink: #14161a;
+  --ink-2: #4a4d54;
+  --ink-3: #767982;
+  --ink-4: #b3b5bb;
+  --rule: #e6e4dd;
+  --rule-2: #d6d3ca;
+  --accent: #1f3d6e;
+  --accent-soft: #e8edf5;
+  --pos: #1d6b3a;
+  --pos-soft: #e6f1ea;
+  --neg: #a23a1f;
+  --neg-soft: #f5e6e0;
+  --warn: #8a6512;
+  --warn-soft: #f5ecd6;
+
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 10px;
+
+  --shadow-sm: 0 1px 2px rgba(20,22,26,0.04), 0 0 0 1px rgba(20,22,26,0.04);
+  --shadow-md: 0 4px 14px rgba(20,22,26,0.06), 0 0 0 1px rgba(20,22,26,0.05);
+
+  --font-ui: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Fraunces", "Inter Tight", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #0e0f12;
+  --surface: #16181c;
+  --surface-2: #1d1f24;
+  --ink: #ececec;
+  --ink-2: #b8bac0;
+  --ink-3: #8a8d95;
+  --ink-4: #565962;
+  --rule: #272930;
+  --rule-2: #353841;
+  --accent: #7aa2dc;
+  --accent-soft: #1a2638;
+  --pos: #6ec38a;
+  --pos-soft: #1a2a20;
+  --neg: #d28774;
+  --neg-soft: #2a1c18;
+  --warn: #d8b46a;
+  --warn-soft: #2a2316;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html, body { overflow-x: clip; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+button { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.ic { display: inline-block; vertical-align: middle; }
