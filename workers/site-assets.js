@@ -22,7 +22,9 @@ export default {
     const accept = request.headers.get('Accept') || '';
     const wantHtml = accept.includes('text/html');
 
-    if (wantHtml && shouldServePortalSpaIndex(pathname)) {
+    const isGetOrHead = request.method === 'GET' || request.method === 'HEAD';
+    // Portal shell is HTML; do not require Accept: text/html (some clients send */* only).
+    if (isGetOrHead && shouldServePortalSpaIndex(pathname)) {
       const m = decodeURIComponent(pathname).match(/^(.*?\/portal)\//i);
       if (m) {
         const idx = new URL(request.url);

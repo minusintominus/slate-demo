@@ -3,8 +3,9 @@
  * _redirects proxy rules are not applied once Functions handle a URL; this middleware
  * keeps /portal/* client routes working regardless.
  */
+// Include jsx/tsx — portal modules load as .jsx; without these, middleware served HTML for those URLs and Babel failed on "slate-bundle.jsx".
 const STATIC_EXT =
-  /\.(?:js|mjs|cjs|css|html|htm|json|map|wasm|svg|png|jpe?g|gif|webp|ico|avif|woff2?|ttf|eot|otf|webmanifest|txt|xml)$/i;
+  /\.(?:jsx|tsx|ts|js|mjs|cjs|css|html|htm|json|map|wasm|svg|png|jpe?g|gif|webp|ico|avif|woff2?|ttf|eot|otf|webmanifest|txt|xml)$/i;
 
 /** @param {{ request: Request; next: (i?: Request | string, init?: RequestInit) => Promise<Response>; env: { ASSETS?: { fetch: typeof fetch } } }} context */
 export async function onRequest(context) {
