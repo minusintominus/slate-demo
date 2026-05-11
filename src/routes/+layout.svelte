@@ -186,7 +186,8 @@
 
   const pathname = $derived(page.url.pathname);
   const isRoleHome = $derived(pathname === '/');
-  const esliEntry = `${base}/slate-esli/index.html`;
+  const portalClientHome = `${base}/portal/dashboard`;
+  const portalComplianceHome = `${base}/portal/compliance/inbox`;
 
   $effect(() => {
     if (!browser) return;
@@ -198,11 +199,11 @@
         return;
       }
       if (role === 'client') {
-        window.location.replace(`${esliEntry}#dashboard`);
+        window.location.replace(portalClientHome);
         return;
       }
       if (role === 'compliance') {
-        window.location.replace(`${esliEntry}#compliance/inbox`);
+        window.location.replace(portalComplianceHome);
       }
     }
   });

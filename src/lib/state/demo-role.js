@@ -1,4 +1,4 @@
-/** Same key/values as demo-esli `book.jsx` — shared with embedded `/slate-esli` SPA. */
+/** Same key/values as demo-esli `book.jsx` — shared with embedded client portal SPA (`/portal/`). */
 export const SLATE_DEMO_ROLE_KEY = 'slate-demo-role';
 
 /** @returns {'wm' | 'client' | 'compliance' | null} */

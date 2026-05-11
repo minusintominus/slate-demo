@@ -19,7 +19,8 @@
     };
   }
 
-  const esliEntry = `${base}/slate-esli/index.html`;
+  const portalClientHome = `${base}/portal/dashboard`;
+  const portalComplianceHome = `${base}/portal/compliance/inbox`;
   const lockupLight = `${base}/brand/slate-lockup-light.png?v=2`;
   const lockupDark = `${base}/brand/slate-lockup-dark.png?v=2`;
 
@@ -54,11 +55,11 @@
       return;
     }
     if (r === 'client') {
-      window.location.replace(`${esliEntry}#dashboard`);
+      window.location.replace(portalClientHome);
       return;
     }
     if (r === 'compliance') {
-      window.location.replace(`${esliEntry}#compliance/inbox`);
+      window.location.replace(portalComplianceHome);
     }
   });
 
@@ -69,12 +70,12 @@
 
   function pickClient() {
     setDemoRole('client');
-    window.location.href = `${esliEntry}#dashboard`;
+    window.location.href = portalClientHome;
   }
 
   function pickCompliance() {
     setDemoRole('compliance');
-    window.location.href = `${esliEntry}#compliance/inbox`;
+    window.location.href = portalComplianceHome;
   }
 
   function toggleTheme() {
@@ -459,28 +460,21 @@
     color: inherit;
   }
 
-  .role-topbar-brand:focus-visible .role-topbar-logo-frame {
+  .role-topbar-brand:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
+    border-radius: 6px;
   }
 
   .role-topbar-logo-frame {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 6px 12px;
-    border-radius: 10px;
-    background: var(--surface);
-    border: 1px solid var(--rule-2);
-    box-shadow:
-      inset 0 1px 0 color-mix(in oklch, var(--surface) 85%, transparent),
-      0 1px 2px color-mix(in oklch, var(--ink) 6%, transparent);
-  }
-
-  :global([data-theme='dark']) .role-topbar-logo-frame {
-    background: color-mix(in oklch, var(--surface-2) 75%, var(--surface));
-    border-color: var(--rule);
-    box-shadow: inset 0 1px 0 color-mix(in oklch, var(--ink) 12%, transparent);
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .role-topbar-logo {
