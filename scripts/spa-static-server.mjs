@@ -6,6 +6,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { shouldServePortalSpaIndex } from './portal-spa-fallback.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..', 'build');
@@ -97,6 +98,10 @@ const server = http.createServer((req, res) => {
   if (urlPath.endsWith('/')) urlPath = urlPath.slice(0, -1) || '/';
 
   let file = resolveFile(urlPath);
+  if (!file && shouldServePortalSpaIndex(urlPath)) {
+    const portalIdx = path.join(root, 'portal', 'index.html');
+    if (existsFile(portalIdx)) file = portalIdx;
+  }
   if (!file) {
     const fallback = path.join(root, 'index.html');
     if (existsFile(fallback)) file = fallback;

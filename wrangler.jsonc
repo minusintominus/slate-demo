@@ -1,12 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "slate-demo",
+  "main": "workers/site-assets.js",
   "compatibility_date": "2026-05-08",
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": "./build",
-    "not_found_handling": "single-page-application"
+    "binding": "ASSETS"
   }
 }
