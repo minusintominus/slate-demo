@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node scripts/strip-build-redirects.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "static": "node scripts/spa-static-server.mjs",
     "preview:static": "npm run build && npm run static",
